@@ -1,0 +1,79 @@
+@import './styles/variables';
+
+@mixin centerFlex ($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    @include centerFlex(column);
+    background-color: $color-lightGray;
+    margin: 0;
+}
+
+.card {
+    @include centerFlex(column);
+    font-family: $font-family;
+    font-size: $font-size;
+    background-color: $color-white;
+    width: 18em;
+    padding: 0.8em;
+    border-radius: 1em;
+    box-shadow: 0 0.75em 3em rgba(0, 0, 0, 0.175);
+
+    .qr-code {
+        width: 100%;
+        border-radius: 6px;
+    }
+
+    p {
+        margin: 1.1em 1em 0;
+        text-align: center;
+    }
+
+    .one {
+        font-weight: $fw-700;
+        color: $color-darkBlue;
+        font-size: 1.2em;
+    }
+
+    .two {
+        color: $color-grayishBlue;
+        font-size: 0.85em;
+        margin-bottom: 1.75em;
+    }
+
+}
+
+.attribution {
+    @include centerFlex(column);
+    margin: 1.4em 0 0;
+    padding: 0.66em 1em;
+    background-color: $color-darkBlue;
+    border-radius: 0.4em;
+    font-family: $font-family;
+    font-size: 0.75em;
+
+    p {
+        color: $color-lightGray;
+        margin: 0;
+    }
+
+    a {
+        color: $color-white;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
